@@ -3,9 +3,5 @@ version: '3'
 services:
   mongo:
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_DATABASE=auth
-      - MONGO_INITDB_ROOT_PASSWORD=pass
     volumes: 
       - ./data:/data/db

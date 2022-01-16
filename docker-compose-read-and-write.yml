@@ -6,7 +6,7 @@ services:
     image: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_DATABASE=auth
+      - MONGO_INITDB_DATABASE=testdb
       - MONGO_INITDB_ROOT_PASSWORD=pass
     volumes: 
       - ./data-write:/data/db
@@ -14,9 +14,5 @@ services:
   mongo-read:
     container_name: mongo-read
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_DATABASE=auth
-      - MONGO_INITDB_ROOT_PASSWORD=pass
     volumes: 
       - ./data-read:/data/db

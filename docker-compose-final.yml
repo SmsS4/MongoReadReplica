@@ -9,6 +9,8 @@ services:
       - ./scripts:/scripts
     links:
       - mongo-read
+    ports:
+      - 27017:27017
     command: bash -c "(./scripts/sync.sh&) ; mongod --bind_ip_all --replSet dbrs"
 
   
@@ -18,4 +20,6 @@ services:
     volumes:
       - type: tmpfs
         target: /data/db
+    ports:
+      - 27018:27017
     entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs" ]
