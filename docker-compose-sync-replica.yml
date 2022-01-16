@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mongo-write:
+    container_name: mongo-write
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_DATABASE=auth
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes: 
+      - ./data-write:/data/db
+      - ./scripts:/scripts
+    links:
+      - mongo-read
+    command: bash -c "(./scripts/sync.sh&) ; mongod --bind_ip_all --replSet dbrs"
+  
+  mongo-read:
+    container_name: mongo-read
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_DATABASE=auth
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes: 
+      - ./data-read:/data/db
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs" ]
