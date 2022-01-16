@@ -1,5 +1,6 @@
 {
   "name": "mongoreadreplica",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/SmsS4/MongoReadReplica#readme",
   "dependencies": {
+    "express": "^4.17.2",
     "mongodb": "^4.3.0",
-    "mongoose": "^6.1.6"
+    "parse-dashboard": "^3.3.0",
+    "parse-server": "^4.10.4"
   }
 }
