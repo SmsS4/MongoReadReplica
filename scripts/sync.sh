@@ -4,7 +4,7 @@ do
     sleep 1
 done
 
-until mongo --host mongo-read:27017 --eval "print(\"waited for connection read\")"
+until mongo --host mongo-read:27018 --eval "print(\"waited for connection read\")"
 do
     sleep 1
 done
@@ -23,7 +23,7 @@ var config = {
         },
         {
             "_id": 2,
-            "host": "mongo-read:27017",
+            "host": "mongo-read:27018",
             "priority": 1
         }
     ]

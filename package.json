@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SmsS4/MongoReadReplica#readme",
   "dependencies": {
-    "mongodb": "^4.3.0"
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6"
   }
 }
