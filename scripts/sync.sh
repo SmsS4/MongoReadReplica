@@ -4,7 +4,7 @@ do
     sleep 1
 done
 
-until mongo --host mongo-read:27018 --eval "print(\"waited for connection read\")"
+until mongo --host mongo-read:27017 --eval "print(\"waited for connection read\")"
 do
     sleep 1
 done
@@ -23,13 +23,11 @@ var config = {
         },
         {
             "_id": 2,
-            "host": "mongo-read:27018",
+            "host": "mongo-read:27017",
             "priority": 1
         }
     ]
 };
 rs.initiate(config, { force: true });
 rs.reconfig(config, { force: true });
-db.getMongo().setReadPref('secondary')
-rs.status();
 EOF

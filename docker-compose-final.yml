@@ -11,7 +11,7 @@ services:
       - mongo-read
     ports:
       - 27017:27017
-    command: bash -c "(./scripts/sync.sh&) ; mongod --bind_ip_all --replSet dbrs"
+    command: bash -c "(./scripts/sync-final.sh&) ; mongod --bind_ip_all --replSet dbrs"
 
   
   mongo-read:

@@ -4,10 +4,6 @@ services:
   mongo-write:
     container_name: mongo-write
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_DATABASE=testdb
-      - MONGO_INITDB_ROOT_PASSWORD=pass
     volumes: 
       - ./data-write:/data/db
 
