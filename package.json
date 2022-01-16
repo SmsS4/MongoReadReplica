@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SmsS4/MongoReadReplica/issues"
   },
-  "homepage": "https://github.com/SmsS4/MongoReadReplica#readme"
+  "homepage": "https://github.com/SmsS4/MongoReadReplica#readme",
+  "dependencies": {
+    "mongodb": "^4.3.0"
+  }
 }
