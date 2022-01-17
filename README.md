@@ -1,5 +1,13 @@
 # MongoReadReplica
 
+### Note
+You have to add
+```
+127.0.0.1   mongo-read
+127.0.0.1   mongo-write
+```
+to /etc/hosts
+
 ### Virgol post
 
 ### Create databases
