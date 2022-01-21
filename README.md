@@ -19,7 +19,7 @@ And then you can connect to MongoDB like this:
 ## Create just one MongoDB using docker-compose
 
 You can run a docker-compose with this command:  
-```
+```bash
 docker-compose -f path/to/docker-compose.yml up
 ```
 
@@ -305,7 +305,7 @@ dbrs:SECONDARY> db.release_year.find();
 Unfortunately MongoDB supports in-memory  
 database just in enterprise version but  
 you can create your volume in ram like this:
-```
+```yml
 volumes:
     - type: tmpfs
     target: /data/db
@@ -349,7 +349,7 @@ another way is to add `mongo-read` and
 `mongo-write` to your hosts file. and run  
 `mongo-read` on port 27018.  
 you can edit hosts file like this:  
-```
+```bash
 sudo vim /etc/hosts
 ```
 and add 
@@ -510,14 +510,14 @@ MongoClient.connect(
 ### Note:
 If you are getting error for import  
 you may have to add
-```
+```json
 "type": "module"
 ```
 to your `package.json` 
 
 ### Test:
 You can connect to cli with these comamnds:
-```
+```bash
 mongo --host "mongodb://localhost:27017"
 mongo --host "mongodb://localhost:27018"
 ```
@@ -623,12 +623,13 @@ var api = new ParseServer({
 
 
 # Mongodb comamnds
+```
 db.release_year.insertOne({ name: "Example", year: 2017})
 db.release_year.find();
 rs.slaveOk()
 db.setProfilingLevel(2)
 db.system.profile.find().count()
-
+```
 
 ### Note
 You have to add
@@ -675,7 +676,7 @@ mongo-write instance on port 27017 is for write query
 http://localhost:1337/dashboard
 
 ### Mongodb URI:
-mongodb://localhost:27017,localhost:27018/?replicaSet=dbrs&readPreference=secondary
+`mongodb://localhost:27017,localhost:27018/?replicaSet=dbrs&readPreference=secondary`
 
 
 
